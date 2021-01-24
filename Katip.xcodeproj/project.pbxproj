@@ -11,7 +11,7 @@
 		726FB40A25BD6130007BEAE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726FB40925BD6130007BEAE9 /* Assets.xcassets */; };
 		726FB40D25BD6130007BEAE9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 726FB40B25BD6130007BEAE9 /* MainMenu.xib */; };
 		726FB41C25BD640E007BEAE9 /* ISOKatip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FB41B25BD640E007BEAE9 /* ISOKatip.swift */; };
-		726FB41F25BD6975007BEAE9 /* ISODictator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FB41E25BD6975007BEAE9 /* ISODictator.swift */; };
+		726FB41F25BD6975007BEAE9 /* ISOTranscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FB41E25BD6975007BEAE9 /* ISOTranscriber.swift */; };
 		726FB42625BD7FC0007BEAE9 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 726FB42825BD7FC0007BEAE9 /* Localization.strings */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +23,7 @@
 		726FB40E25BD6130007BEAE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		726FB40F25BD6130007BEAE9 /* Katip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Katip.entitlements; sourceTree = "<group>"; };
 		726FB41B25BD640E007BEAE9 /* ISOKatip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISOKatip.swift; sourceTree = "<group>"; };
-		726FB41E25BD6975007BEAE9 /* ISODictator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISODictator.swift; sourceTree = "<group>"; };
+		726FB41E25BD6975007BEAE9 /* ISOTranscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISOTranscriber.swift; sourceTree = "<group>"; };
 		726FB42725BD7FC0007BEAE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +59,7 @@
 			children = (
 				726FB40725BD612F007BEAE9 /* AppDelegate.swift */,
 				726FB41B25BD640E007BEAE9 /* ISOKatip.swift */,
-				726FB41E25BD6975007BEAE9 /* ISODictator.swift */,
+				726FB41E25BD6975007BEAE9 /* ISOTranscriber.swift */,
 				726FB42825BD7FC0007BEAE9 /* Localization.strings */,
 				726FB40925BD6130007BEAE9 /* Assets.xcassets */,
 				726FB40B25BD6130007BEAE9 /* MainMenu.xib */,
@@ -160,7 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				726FB41F25BD6975007BEAE9 /* ISODictator.swift in Sources */,
+				726FB41F25BD6975007BEAE9 /* ISOTranscriber.swift in Sources */,
 				726FB40825BD612F007BEAE9 /* AppDelegate.swift in Sources */,
 				726FB41C25BD640E007BEAE9 /* ISOKatip.swift in Sources */,
 			);
