@@ -322,7 +322,7 @@
                                     <size key="minSize" width="799" height="291"/>
                                     <size key="maxSize" width="843" height="10000000"/>
                                     <attributedString key="textStorage">
-                                        <fragment content="Waiting...">
+                                        <fragment content="&lt;Nothing here yet&gt;">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <font key="NSFont" size="20" name="LucidaGrande"/>
