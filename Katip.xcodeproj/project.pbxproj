@@ -10,6 +10,9 @@
 		726FB40825BD612F007BEAE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FB40725BD612F007BEAE9 /* AppDelegate.swift */; };
 		726FB40A25BD6130007BEAE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726FB40925BD6130007BEAE9 /* Assets.xcassets */; };
 		726FB40D25BD6130007BEAE9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 726FB40B25BD6130007BEAE9 /* MainMenu.xib */; };
+		726FB41C25BD640E007BEAE9 /* ISOKatip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FB41B25BD640E007BEAE9 /* ISOKatip.swift */; };
+		726FB41F25BD6975007BEAE9 /* ISODictator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FB41E25BD6975007BEAE9 /* ISODictator.swift */; };
+		726FB42625BD7FC0007BEAE9 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 726FB42825BD7FC0007BEAE9 /* Localization.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		726FB40C25BD6130007BEAE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		726FB40E25BD6130007BEAE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		726FB40F25BD6130007BEAE9 /* Katip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Katip.entitlements; sourceTree = "<group>"; };
+		726FB41B25BD640E007BEAE9 /* ISOKatip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISOKatip.swift; sourceTree = "<group>"; };
+		726FB41E25BD6975007BEAE9 /* ISODictator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISODictator.swift; sourceTree = "<group>"; };
+		726FB42725BD7FC0007BEAE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,9 @@
 			isa = PBXGroup;
 			children = (
 				726FB40725BD612F007BEAE9 /* AppDelegate.swift */,
+				726FB41B25BD640E007BEAE9 /* ISOKatip.swift */,
+				726FB41E25BD6975007BEAE9 /* ISODictator.swift */,
+				726FB42825BD7FC0007BEAE9 /* Localization.strings */,
 				726FB40925BD6130007BEAE9 /* Assets.xcassets */,
 				726FB40B25BD6130007BEAE9 /* MainMenu.xib */,
 				726FB40E25BD6130007BEAE9 /* Info.plist */,
@@ -70,6 +79,7 @@
 				726FB40025BD612F007BEAE9 /* Sources */,
 				726FB40125BD612F007BEAE9 /* Frameworks */,
 				726FB40225BD612F007BEAE9 /* Resources */,
+				726FB42B25BDD736007BEAE9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -117,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726FB42625BD7FC0007BEAE9 /* Localization.strings in Resources */,
 				726FB40A25BD6130007BEAE9 /* Assets.xcassets in Resources */,
 				726FB40D25BD6130007BEAE9 /* MainMenu.xib in Resources */,
 			);
@@ -124,12 +135,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		726FB42B25BDD736007BEAE9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		726FB40025BD612F007BEAE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726FB41F25BD6975007BEAE9 /* ISODictator.swift in Sources */,
 				726FB40825BD612F007BEAE9 /* AppDelegate.swift in Sources */,
+				726FB41C25BD640E007BEAE9 /* ISOKatip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +175,14 @@
 				726FB40C25BD6130007BEAE9 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		726FB42825BD7FC0007BEAE9 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				726FB42725BD7FC0007BEAE9 /* en */,
+			);
+			name = Localization.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -277,6 +318,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.imdat.Katip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -298,6 +340,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.imdat.Katip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

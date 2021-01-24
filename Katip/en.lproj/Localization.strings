@@ -1,0 +1,27 @@
+/* 
+  Localized.strings
+  Katip
+
+  Created by Imdat Solak on 24.01.21.
+  
+*/
+
+"message.transcribing" = "Transcribing « %@ »";
+"message.transcription.done" = "Transcription done...";
+"message.no_languages" = "No Languages";
+
+"transcription.info.dialog.title" = "Transcription";
+"transcription.info.dialog.message" = "The transcription will be processed in realtime in the background, so you may continue with other work while I transcribe. I will notify you when it is done.";
+"transcription.done.notification.title" = "Transcription done";
+"transcription.done.notification.message" = "Your transcription of « %@ » is done.";
+"openpanel.title" = "Select Recording";
+"openpanel.prompt" = "Transcribe";
+"openpanel.message" = "Select a Recording to Transcribe";
+"errormessage.speech.denied" = "Speech Recognition Denied";
+"errormessage.speech.restricted" = "Speech Recognition Restricted";
+"errormessage.speech.not_determined" = "Speech Recognition Not Determined";
+"errormessage.speech.unknown" = "Speech Recognition Status Unknown";
+
+"saveerror.dialog.title" = "File Save Error";
+"saveerror.dialog.message" = "Could not save transcribed text to the specified file. Please check permission and try again.";
+
