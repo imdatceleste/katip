@@ -181,7 +181,11 @@ class ISOKatip: NSObject, ISOTranscriberDelegate {
     // Delegate methods
     
     func shouldStopTranscription() -> Bool {
-        stopTranscription
+        // We need to reset the value after returning, as we might be called twice
+        // and that might create a problem in ISOTranscriber
+        let retVal = stopTranscription
+        stopTranscription = false
+        return retVal
     }
     
     func setTranscribedText(_ text: String, withSentenceNo sentenceNo: Int) {
