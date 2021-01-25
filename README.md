@@ -2,7 +2,43 @@
 
 A simple `SFSpeechRecognizer`-based Voice Recording transcriber for macOS.
 
-More details will follow.
+If you have voice recordings (dictations) that you would like to transcribe using
+your macOS computer, you can use this application to do so.
+
+The voice-recordings must be in `mp3`, `m4a`, `wav`, or `mpa`-format (mor formats
+may be possible, haven't tested yet).
+
+**Katip** will require local transcription capabilities; it does not use Apple's
+servers, otherwise the transcription would be limited to a few seconds.
+
+Depending on the performance of your local macOS computer, the transcription may 
+happen in somewhere between realtime and 3-4x real-time speed. Please be patient.
+
+## The name
+
+You may ask what **Katip** means and why I called it that way and why there is a
+fez as application icon.
+
+The [wise Wikipedia has the answer](https://en.wikipedia.org/wiki/Uska_Dara):
+
+> Uska Dara (A Turkish Tale) is a 1953 song made famous by Eartha Kitt, 
+> also recorded by Eydie Gormé. It is based on the Turkish folk song 
+> Kâtibim about a woman and her secretary traveling to Üsküdar. On 
+> early American recordings, this adaptation is credited to Stella Lee.
+
+Basically, *Kâtibim* means "my Katip" and "Katip" is a male secretary. 
+
+In olden days in Turkey, many people could not or would not want to write themselves
+and thus there were *Katip* who would write for other people. Sometimes you had your
+own *Katip* (provided you were rich enough to pay for a full-time *Katip*).
+
+That's the background of the title: **Katip = your (male) secretary**
+
+I recommend to listen to the [Eartha Kitt version of the song on YouTube](https://www.youtube.com/watch?v=sVXFDtC_gqk).
+
+## Requests
+
+If you have any requests, please do not hesitate to open an issue.
 
 ## License
 
