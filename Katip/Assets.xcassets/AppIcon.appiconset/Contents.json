@@ -7,7 +7,7 @@
       "size" : "16x16"
     },
     {
-      "filename" : "katip_32x32-1.png",
+      "filename" : "katip_32x32.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
@@ -31,7 +31,7 @@
       "size" : "128x128"
     },
     {
-      "filename" : "katip_256x256-1.png",
+      "filename" : "katip_256x256.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
@@ -43,7 +43,7 @@
       "size" : "256x256"
     },
     {
-      "filename" : "katip_512x512-1.png",
+      "filename" : "katip_512x512.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
