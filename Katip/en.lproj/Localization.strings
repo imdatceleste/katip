@@ -9,6 +9,9 @@
 "message.transcribing" = "Transcribing « %@ »";
 "message.transcription.done" = "Transcription done...";
 "message.no_languages" = "No Languages";
+"message.waiting" = "Waiting...";
+"message.will.stop" = "Will Stop...";
+"window.title.stopping" = "Katip  - Stopping...";
 
 "transcription.info.dialog.title" = "Transcription";
 "transcription.info.dialog.message" = "The transcription will be processed in realtime in the background, so you may continue with other work while I transcribe. I will notify you when it is done.";
@@ -21,7 +24,17 @@
 "errormessage.speech.restricted" = "Speech Recognition Restricted";
 "errormessage.speech.not_determined" = "Speech Recognition Not Determined";
 "errormessage.speech.unknown" = "Speech Recognition Status Unknown";
+"savepanel.title" = "Save Transcription";
+"savepanel.prompt" = "Save";
+"savepanel.message" = "Select a filename to save to";
+"savepanel.untitle" = "Untitled";
 
 "saveerror.dialog.title" = "File Save Error";
 "saveerror.dialog.message" = "Could not save transcribed text to the specified file. Please check permission and try again.";
 
+"message.eta" = "ETA: %02d:%02d:%02d";
+
+"reset.eta.estimates.alert.title" = "Reset ETA Estimates";
+"reset.eta.estimates.message" = "Are you sure you want to reset ETA estimate data?";
+"reset.eta.estimates.reset.button" = "Reset";
+"reset.eta.estimates.cancel.button" = "Cancel";

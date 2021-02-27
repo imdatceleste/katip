@@ -37,7 +37,14 @@ class ISOTranscriber: NSObject {
             $0.identifier < $1.identifier
         }
     }
-    
+    /*
+     self.recognizer = SFSpeechRecognizer(locale: Locale(identifier: "es-ES"))
+     
+     print("Language: ", self.recognizer.locale)
+     print("Is available: ", self.recognizer.isAvailable)
+     print("Supports on-device recognition: ", self.recognizer.supportsOnDeviceRecognition)
+
+     */
     func setup() {
         SFSpeechRecognizer.requestAuthorization { authStatus in
              OperationQueue.main.addOperation {

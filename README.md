@@ -40,6 +40,25 @@ I recommend to listen to the [Eartha Kitt version of the song on YouTube](https:
 
 If you have any requests, please do not hesitate to open an issue.
 
+## ETA Assumptions
+`SFSpeechRecognizer` can't estimate how long the transcription will take. The user, 
+though, would like to know how long it *may* take. The solution I have come up is
+actually easy:
+
+> It seems, the time it takes is dependent on machine and load on the machine. 
+> The load itself doesn't some to influence too much. So, the first time you 
+> run the software on a machine in your account, it will show an **indeterminate** 
+> progress bar. It will tell you that it might take as much as the duration of 
+> your audio recording.
+>
+> At the end of each recording, it will check how long it actually took. And starting
+> with the second transcription, it will have better and better estimates and will
+> display a **determinate** progress bar.
+>
+> If you think the timing sucks, you can reset all assumptions in the preferences.
+
+Have fun.
+
 ## License
 
 Copyright 2021 Imdat Solak

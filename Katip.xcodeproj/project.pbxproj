@@ -13,6 +13,9 @@
 		726FB41C25BD640E007BEAE9 /* ISOKatip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FB41B25BD640E007BEAE9 /* ISOKatip.swift */; };
 		726FB41F25BD6975007BEAE9 /* ISOTranscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FB41E25BD6975007BEAE9 /* ISOTranscriber.swift */; };
 		726FB42625BD7FC0007BEAE9 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 726FB42825BD7FC0007BEAE9 /* Localization.strings */; };
+		7270219A25EA9BD70008200D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7270219C25EA9BD70008200D /* InfoPlist.strings */; };
+		727021A125EAB3AE0008200D /* ISOKatip+NSTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727021A025EAB3AE0008200D /* ISOKatip+NSTableViewDataSource.swift */; };
+		727021A425EAB4F10008200D /* ISOKatpi+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727021A325EAB4F10008200D /* ISOKatpi+NSTableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,12 @@
 		726FB41B25BD640E007BEAE9 /* ISOKatip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISOKatip.swift; sourceTree = "<group>"; };
 		726FB41E25BD6975007BEAE9 /* ISOTranscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISOTranscriber.swift; sourceTree = "<group>"; };
 		726FB42725BD7FC0007BEAE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		7270219425EA9A7A0008200D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		7270219525EA9A7A0008200D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localization.strings; sourceTree = "<group>"; };
+		7270219B25EA9BD70008200D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7270219E25EA9BE00008200D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		727021A025EAB3AE0008200D /* ISOKatip+NSTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISOKatip+NSTableViewDataSource.swift"; sourceTree = "<group>"; };
+		727021A325EAB4F10008200D /* ISOKatpi+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISOKatpi+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +68,14 @@
 			children = (
 				726FB40725BD612F007BEAE9 /* AppDelegate.swift */,
 				726FB41B25BD640E007BEAE9 /* ISOKatip.swift */,
+				727021A025EAB3AE0008200D /* ISOKatip+NSTableViewDataSource.swift */,
+				727021A325EAB4F10008200D /* ISOKatpi+NSTableViewDelegate.swift */,
 				726FB41E25BD6975007BEAE9 /* ISOTranscriber.swift */,
 				726FB42825BD7FC0007BEAE9 /* Localization.strings */,
 				726FB40925BD6130007BEAE9 /* Assets.xcassets */,
 				726FB40B25BD6130007BEAE9 /* MainMenu.xib */,
 				726FB40E25BD6130007BEAE9 /* Info.plist */,
+				7270219C25EA9BD70008200D /* InfoPlist.strings */,
 				726FB40F25BD6130007BEAE9 /* Katip.entitlements */,
 			);
 			path = Katip;
@@ -111,6 +123,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 726FB3FB25BD612F007BEAE9;
 			productRefGroup = 726FB40525BD612F007BEAE9 /* Products */;
@@ -128,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				726FB42625BD7FC0007BEAE9 /* Localization.strings in Resources */,
+				7270219A25EA9BD70008200D /* InfoPlist.strings in Resources */,
 				726FB40A25BD6130007BEAE9 /* Assets.xcassets in Resources */,
 				726FB40D25BD6130007BEAE9 /* MainMenu.xib in Resources */,
 			);
@@ -161,6 +175,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				726FB41F25BD6975007BEAE9 /* ISOTranscriber.swift in Sources */,
+				727021A125EAB3AE0008200D /* ISOKatip+NSTableViewDataSource.swift in Sources */,
+				727021A425EAB4F10008200D /* ISOKatpi+NSTableViewDelegate.swift in Sources */,
 				726FB40825BD612F007BEAE9 /* AppDelegate.swift in Sources */,
 				726FB41C25BD640E007BEAE9 /* ISOKatip.swift in Sources */,
 			);
@@ -173,6 +189,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				726FB40C25BD6130007BEAE9 /* Base */,
+				7270219425EA9A7A0008200D /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -181,8 +198,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				726FB42725BD7FC0007BEAE9 /* en */,
+				7270219525EA9A7A0008200D /* de */,
 			);
 			name = Localization.strings;
+			sourceTree = "<group>";
+		};
+		7270219C25EA9BD70008200D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7270219B25EA9BD70008200D /* en */,
+				7270219E25EA9BE00008200D /* de */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -192,6 +219,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -253,6 +281,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -318,7 +347,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.imdat.Katip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -340,7 +369,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.imdat.Katip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

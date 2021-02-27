@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Katip
+
+  Created by Imdat Solak on 27.02.21.
+  
+*/
+NSSpeechRecognitionUsageDescription = "Wir benötigen die Spracherkennung des macOS als Hauptfunktion in dieser Anwendung.";
+

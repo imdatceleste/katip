@@ -1,0 +1,40 @@
+/* 
+  Localized.strings
+  Katip
+
+  Created by Imdat Solak on 24.01.21.
+  
+*/
+
+"message.transcribing" = "Transkribiere « %@ »";
+"message.transcription.done" = "Transkription fertig...";
+"message.no_languages" = "Keine Transkriptionssprachen verfügbar";
+"message.waiting" = "Warten...";
+"message.will.stop" = "Wird angehalten...";
+"window.title.stopping" = "Katip  - Hält an...";
+
+"transcription.info.dialog.title" = "Transkription";
+"transcription.info.dialog.message" = "Die Transkription wird im Hintergrund durchgeführt. Sie können währenddessen sich mit anderen Themen beschäftigen. Ich werede Sie informieren, wenn die Transkription fertig ist.";
+"transcription.done.notification.title" = "Transkription fertig";
+"transcription.done.notification.message" = "Ihre Transkription von « %@ » ist fertig.";
+"openpanel.title" = "Sprachaufzeichnung auswählen";
+"openpanel.prompt" = "Transkribieren";
+"openpanel.message" = "Wählen Sie eine Sprachaufzeichnung aus";
+"errormessage.speech.denied" = "Spracherkennung abgelehnt";
+"errormessage.speech.restricted" = "Spracherkennung eingeschränkt";
+"errormessage.speech.not_determined" = "Spracherkennungsmöglichkeit nicht bekannt";
+"errormessage.speech.unknown" = "Spracherkennungsmöglichkeit nicht bekannt";
+"savepanel.title" = "Transkription speichern";
+"savepanel.prompt" = "Speichern";
+"savepanel.message" = "Bitte wählen Sie einen Dateinamen aus";
+"savepanel.untitle" = "Untitled";
+
+"saveerror.dialog.title" = "Fehler beim Speichern";
+"saveerror.dialog.message" = "Die Transkription konnte nicht gespeichert werden. Bitte überprüfen Sie die Zugriffsrechte und versuchen Sie es nochmals.";
+
+"message.eta" = "ETA: %02d:%02d:%02d";
+
+"reset.eta.estimates.alert.title" = "ETA Zurücksetzen";
+"reset.eta.estimates.message" = "Sind Sie sicher, dass sie die ETA-Annahmen zurücksetzen möchten?";
+"reset.eta.estimates.reset.button" = "Zurück setzen";
+"reset.eta.estimates.cancel.button" = "Abbrechen";

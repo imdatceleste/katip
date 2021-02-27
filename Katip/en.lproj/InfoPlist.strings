@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Katip
+
+  Created by Imdat Solak on 27.02.21.
+  
+*/
+NSSpeechRecognitionUsageDescription = "We use speech recognition as main functionality here";
+
