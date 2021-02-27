@@ -247,6 +247,7 @@ class ISOKatip: NSObject, ISOTranscriberDelegate, NSWindowDelegate {
     }
     
     func prepareDisplayLocales() {
+        displayLocales.removeAll()
         if let transcriber = self.transcriber, transcriber.recognitionEnabled {
             for locale in transcriber.supportedLocales {
                 displayLocales.append(locale)
@@ -328,19 +329,36 @@ class ISOKatip: NSObject, ISOTranscriberDelegate, NSWindowDelegate {
     // MARK: Preferences
     @IBAction func showPreferences(_ : Any) {
         var selectedLanguagesSet = IndexSet()
-        preferencesPanel?.makeKeyAndOrderFront(self)
-        preferencesPanel?.delegate = self
-        preferencesLanguagesTable?.delegate = self
-        preferencesLanguagesTable?.dataSource = self
-        if let transcriber = self.transcriber, transcriber.recognitionEnabled {
-            for i in 0..<transcriber.supportedLocales.count {
-                if displayLocales.contains(transcriber.supportedLocales[i]) {
-                    selectedLanguagesSet.insert(i)
+        if let mainWindow = mainWindow, let preferencesPanel = preferencesPanel {
+            preferencesLanguagesTable?.delegate = self
+            preferencesLanguagesTable?.dataSource = self
+            if let transcriber = self.transcriber, transcriber.recognitionEnabled {
+                for i in 0..<transcriber.supportedLocales.count {
+                    if displayLocales.contains(transcriber.supportedLocales[i]) {
+                        selectedLanguagesSet.insert(i)
+                    }
                 }
             }
+            preferencesLanguagesTable?.reloadData()
+            preferencesLanguagesTable?.selectRowIndexes(selectedLanguagesSet, byExtendingSelection: false)
+            mainWindow.beginSheet(preferencesPanel) { response in
+            }
         }
-        preferencesLanguagesTable?.reloadData()
-        preferencesLanguagesTable?.selectRowIndexes(selectedLanguagesSet, byExtendingSelection: false)
+    }
+    
+    @IBAction func dismissPreferences(_ : Any) {
+        if let selectedLanguages = preferencesLanguagesTable?.selectedRowIndexes, let transcriber = self.transcriber {
+            storedLocales.removeAll()
+            for lang in selectedLanguages {
+                storedLocales.append(transcriber.supportedLocales[lang].identifier)
+            }
+        }
+        UserDefaults.standard.set(storedLocales, forKey: "SelectedLanguages")
+        if let mainWindow = mainWindow, let preferencesPanel = preferencesPanel {
+            mainWindow.endSheet(preferencesPanel)
+        }
+        prepareDisplayLocales()
+        updateLanguagesPopup()
     }
     
     @IBAction func resetETAEstimates(_ : Any) {
@@ -356,10 +374,5 @@ class ISOKatip: NSObject, ISOTranscriberDelegate, NSWindowDelegate {
             haveTranscriptionDivider = false
             transcriptionTimeDivider = 1.0
         }
-    }
-    
-    func windowWillClose(_ notification: Notification) {
-        prepareDisplayLocales()
-        updateLanguagesPopup()
     }
 }

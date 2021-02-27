@@ -24,16 +24,4 @@ extension ISOKatip: NSTableViewDelegate {
     func selectionShouldChange(in tableView: NSTableView) -> Bool {
         true
     }
-    
-    func tableViewSelectionDidChange(_ notification: Notification) {
-        if let selectedLanguages = preferencesLanguagesTable?.selectedRowIndexes, let transcriber = self.transcriber {
-            storedLocales.removeAll()
-            for lang in selectedLanguages {
-                storedLocales.append(transcriber.supportedLocales[lang].identifier)
-            }
-        }
-        UserDefaults.standard.set(storedLocales, forKey: "SelectedLanguages")
-        prepareDisplayLocales()
-        updateLanguagesPopup()
-    }
 }
