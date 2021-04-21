@@ -89,7 +89,9 @@ actually easy:
 >
 > If you think the timing sucks, you can reset all assumptions in the preferences.
 
-Have fun.
+## Notes
+
+There might be more documentation on [Blog Post](https://www.solak.de/katip-an-sfspeechrecognizer-based-voice-recordings-transcriber-for-macos/).
 
 ## License
 
