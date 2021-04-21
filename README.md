@@ -41,6 +41,33 @@ That's the background of the title: **Katip = your (male) secretary**
 
 I recommend to listen to the [Eartha Kitt version of the song on YouTube](https://www.youtube.com/watch?v=sVXFDtC_gqk).
 
+## Setup
+
+You need to tell macOS which languages you want to have offline transcription support. In this case, 
+macOS will download a speech-data for your language and then you can perform your transcript. 
+You have to do this for every language you want to use.
+
+To do so, follow the guidelines:
+
+### 1. Select "System Preferences" from the Apple-Menu
+![Step 0](images/image0.png)
+
+### 2. Select "Keyboard"
+
+![Step 1](images/image1.png)
+
+### 3. Select "Dictation"
+
+![Step 2](images/image2.png)
+
+### 4. Select "Customize..." from "Language"-Menu
+
+![Step 3](images/image3.png)
+
+### 5. Choose your languages
+
+![Step 4](images/image4.png)
+
 ## Requests
 
 If you have any requests, please do not hesitate to open an issue.
