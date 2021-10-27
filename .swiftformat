@@ -1,0 +1,35 @@
+--allman false
+--binarygrouping 4,8
+--closingparen balanced
+--commas always
+--conflictmarkers reject
+--decimalgrouping 3,3
+--elseposition same-line
+--empty void
+--exponentcase lowercase
+--exponentgrouping disabled
+--fractiongrouping disabled
+--fragment false
+--header ignore
+--hexgrouping 4,8
+--hexliteralcase uppercase
+--ifdef indent
+--importgrouping alphabetized
+--indent 4
+--indentcase false
+--linebreaks lf
+--octalgrouping 4,8
+--operatorfunc spaced
+--patternlet hoist
+--ranges spaced
+--self remove
+--selfrequired
+--semicolons inline
+--stripunusedargs always
+--trailingclosures
+--trimwhitespace always
+--wraparguments preserve
+--wrapcollections preserve
+--disable fileHeader,redundantInit,redundantSelf,trailingClosures,trailingCommas,specifiers
+
+--exclude Pods
