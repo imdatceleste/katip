@@ -1,5 +1,5 @@
 //
-//  ISODictator.swift
+//  ISOTranscriber.swift
 //  Katip
 //
 //  Created by Imdat Solak on 24.01.21.
@@ -45,7 +45,7 @@ class ISOTranscriber: NSObject {
 
   func setup() {
     SFSpeechRecognizer.requestAuthorization { authStatus in
-       OperationQueue.main.addOperation {
+      OperationQueue.main.addOperation {
         switch authStatus {
           case .authorized:
             self.recognitionEnabled = true

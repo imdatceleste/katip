@@ -15,7 +15,7 @@
 		726FB42625BD7FC0007BEAE9 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 726FB42825BD7FC0007BEAE9 /* Localization.strings */; };
 		7270219A25EA9BD70008200D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7270219C25EA9BD70008200D /* InfoPlist.strings */; };
 		727021A125EAB3AE0008200D /* ISOKatip+NSTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727021A025EAB3AE0008200D /* ISOKatip+NSTableViewDataSource.swift */; };
-		727021A425EAB4F10008200D /* ISOKatpi+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727021A325EAB4F10008200D /* ISOKatpi+NSTableViewDelegate.swift */; };
+		727021A425EAB4F10008200D /* ISOKatip+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727021A325EAB4F10008200D /* ISOKatip+NSTableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		7270219B25EA9BD70008200D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7270219E25EA9BE00008200D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		727021A025EAB3AE0008200D /* ISOKatip+NSTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISOKatip+NSTableViewDataSource.swift"; sourceTree = "<group>"; };
-		727021A325EAB4F10008200D /* ISOKatpi+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISOKatpi+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
+		727021A325EAB4F10008200D /* ISOKatip+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISOKatip+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 				726FB40725BD612F007BEAE9 /* AppDelegate.swift */,
 				726FB41B25BD640E007BEAE9 /* ISOKatip.swift */,
 				727021A025EAB3AE0008200D /* ISOKatip+NSTableViewDataSource.swift */,
-				727021A325EAB4F10008200D /* ISOKatpi+NSTableViewDelegate.swift */,
+				727021A325EAB4F10008200D /* ISOKatip+NSTableViewDelegate.swift */,
 				726FB41E25BD6975007BEAE9 /* ISOTranscriber.swift */,
 				726FB42825BD7FC0007BEAE9 /* Localization.strings */,
 				726FB40925BD6130007BEAE9 /* Assets.xcassets */,
@@ -176,7 +176,7 @@
 			files = (
 				726FB41F25BD6975007BEAE9 /* ISOTranscriber.swift in Sources */,
 				727021A125EAB3AE0008200D /* ISOKatip+NSTableViewDataSource.swift in Sources */,
-				727021A425EAB4F10008200D /* ISOKatpi+NSTableViewDelegate.swift in Sources */,
+				727021A425EAB4F10008200D /* ISOKatip+NSTableViewDelegate.swift in Sources */,
 				726FB40825BD612F007BEAE9 /* AppDelegate.swift in Sources */,
 				726FB41C25BD640E007BEAE9 /* ISOKatip.swift in Sources */,
 			);

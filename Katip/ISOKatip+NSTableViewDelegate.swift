@@ -1,5 +1,5 @@
 //
-//  ISOKatpi+NSTableViewDelegate.swift
+//  ISOKatip+NSTableViewDelegate.swift
 //  Katip
 //
 //  Created by Imdat Solak on 27.02.21.
