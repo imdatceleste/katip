@@ -297,11 +297,20 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Help" id="wpr-3q-Mcd">
+                <menuItem title="Help" id="4LX-pV-wd2">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Help" systemMenu="help" id="ItI-i6-ce9">
+                        <items>
+                            <menuItem title="Show Readme in Browser" keyEquivalent="?" id="N5o-6V-mHC" userLabel="Show README">
+                                <connections>
+                                    <action selector="help:" target="66D-GA-F88" id="n0t-vZ-WZO"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="11" y="173"/>
+            <point key="canvasLocation" x="-11" y="173"/>
         </menu>
         <window title="Katip" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES"/>

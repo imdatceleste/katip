@@ -66,6 +66,13 @@ class ISOKatip: NSObject, ISOTranscriberDelegate, NSWindowDelegate {
     transcriber?.setup()
   }
   
+  @IBAction private func help(_ : Any) {
+    let url = URL(string: "https://github.com/imdatsolak/katip/blob/main/README.md")!
+    if NSWorkspace.shared.open(url) {
+      print("default browser was successfully opened")
+    }
+  }
+  
   @IBAction private func openFile(_ : Any) {
     let openPanel = NSOpenPanel()
     self.recordingFileUrl = nil
