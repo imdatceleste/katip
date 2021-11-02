@@ -9,6 +9,7 @@ import Foundation
 import AppKit
 import AVFoundation
 import UserNotifications
+import Speech
 
 class ISOKatip: NSObject, ISOTranscriberDelegate, NSWindowDelegate {
   var transcriber: ISOTranscriber?
@@ -33,7 +34,8 @@ class ISOKatip: NSObject, ISOTranscriberDelegate, NSWindowDelegate {
   @IBOutlet var preferencesMenuItem: NSMenuItem?
   @IBOutlet var preferencesPanel: NSPanel?
   @IBOutlet var preferencesLanguagesTable: NSTableView?
-
+  @IBOutlet var preferencesIncludeTimestampsSwitch: NSSwitch?
+  
   @IBOutlet var progressIndicator: NSProgressIndicator?
   private var transcribedSentences: [String] = []
 
@@ -272,12 +274,37 @@ class ISOKatip: NSObject, ISOTranscriberDelegate, NSWindowDelegate {
     return retVal
   }
   
-  func setTranscribedText(_ text: String, withSentenceNo sentenceNo: Int) {
+  func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+    return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+  }
+  
+  func secondsAsTime(_ seconds: Double) -> String {
+    let hS: Int = Int(seconds)
+    let (h, m, s) = secondsToHoursMinutesSeconds(seconds: hS)
+    return String(format:"%02d:%02d:%02d", h, m, s)
+  }
+  
+  func utterancesWithDetails(fromTranscription transcription: SFTranscription, withText text: String) -> String {
+    if let firstSegment = transcription.segments.first, let lastSegment = transcription.segments.last {
+      let x = secondsAsTime(firstSegment.timestamp)
+      let y = secondsAsTime(lastSegment.timestamp + lastSegment.duration)
+      return "[\(x) - \(y)] \(text)"
+    }
+    return text
+  }
+  
+  func setTranscribedText(_ text: String, withSentenceNo sentenceNo: Int, fromTranscription transcription: SFTranscription) {
     updateTranscriptionETA()
+    var transcribedText = ""
+    if UserDefaults.standard.bool(forKey: "ShouldIncludeTimeStampForUtterances") {
+      transcribedText = utterancesWithDetails(fromTranscription: transcription, withText: text)
+    } else {
+      transcribedText = text
+    }
     if sentenceNo == transcribedSentences.count {
-      transcribedSentences.append(text)
+      transcribedSentences.append(transcribedText)
     } else if sentenceNo < transcribedSentences.count {
-      transcribedSentences[sentenceNo] = text
+      transcribedSentences[sentenceNo] = transcribedText
     }
     refreshOutputTextView()
   }
@@ -340,6 +367,7 @@ class ISOKatip: NSObject, ISOTranscriberDelegate, NSWindowDelegate {
       }
       preferencesLanguagesTable?.reloadData()
       preferencesLanguagesTable?.selectRowIndexes(selectedLanguagesSet, byExtendingSelection: false)
+      preferencesIncludeTimestampsSwitch?.state = UserDefaults.standard.bool(forKey: "ShouldIncludeTimeStampForUtterances") ? .on:.off
       mainWindow.beginSheet(preferencesPanel) { _ in
       }
     }
@@ -353,6 +381,7 @@ class ISOKatip: NSObject, ISOTranscriberDelegate, NSWindowDelegate {
       }
     }
     UserDefaults.standard.set(storedLocales, forKey: "SelectedLanguages")
+    UserDefaults.standard.set(preferencesIncludeTimestampsSwitch?.state ?? .off == .on ? true:false, forKey: "ShouldIncludeTimeStampForUtterances")
     if let mainWindow = mainWindow, let preferencesPanel = preferencesPanel {
       mainWindow.endSheet(preferencesPanel)
     }

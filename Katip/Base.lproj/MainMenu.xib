@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -101,8 +102,8 @@
                                     <action selector="paste:" target="-1" id="Zbw-Qk-bzl"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Paste and Match Style" keyEquivalent="V" id="JUD-9f-3BO">
-                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                            <menuItem title="Paste and Match Style" keyEquivalent="v" id="JUD-9f-3BO">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                 <connections>
                                     <action selector="pasteAsPlainText:" target="-1" id="okc-sU-8jc"/>
                                 </connections>
@@ -573,6 +574,7 @@
                 <outlet property="mainWindow" destination="QvC-M9-y7g" id="1PG-s9-svA"/>
                 <outlet property="openButton" destination="Gip-X1-PwE" id="qOX-mD-kEp"/>
                 <outlet property="outputTextView" destination="MbY-Ls-MTv" id="qxu-aa-ooa"/>
+                <outlet property="preferencesIncludeTimestampsSwitch" destination="whZ-FN-36X" id="9Ed-Sb-sOv"/>
                 <outlet property="preferencesLanguagesTable" destination="gh2-F8-lH7" id="HYa-Dn-utg"/>
                 <outlet property="preferencesMenuItem" destination="BOF-NM-1cW" id="818-1D-7FT"/>
                 <outlet property="preferencesPanel" destination="75i-ZF-ts9" id="hoC-ru-bIO"/>
@@ -588,21 +590,22 @@
         </customObject>
         <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="75i-ZF-ts9" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES" utility="YES"/>
-            <rect key="contentRect" x="4265" y="294" width="280" height="377"/>
+            <rect key="contentRect" x="4265" y="294" width="280" height="392"/>
             <rect key="screenRect" x="3840" y="0.0" width="3840" height="2135"/>
             <value key="minSize" type="size" width="280" height="311"/>
             <view key="contentView" id="605-Dy-7Bi">
-                <rect key="frame" x="0.0" y="0.0" width="280" height="377"/>
+                <rect key="frame" x="0.0" y="0.0" width="280" height="392"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8l-jO-Rml">
-                        <rect key="frame" x="20" y="119" width="240" height="207"/>
+                    <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8l-jO-Rml">
+                        <rect key="frame" x="20" y="121" width="240" height="216"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="JEW-J9-wLr">
-                            <rect key="frame" x="1" y="1" width="238" height="205"/>
+                            <rect key="frame" x="1" y="1" width="238" height="214"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="fullWidth" alternatingRowBackgroundColors="YES" columnReordering="NO" autosaveColumns="NO" typeSelect="NO" id="gh2-F8-lH7">
-                                    <rect key="frame" x="0.0" y="0.0" width="238" height="205"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="238" height="214"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="17" height="0.0"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -635,7 +638,7 @@
                         </scroller>
                     </scrollView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="kWH-mr-UXY">
-                        <rect key="frame" x="18" y="341" width="207" height="16"/>
+                        <rect key="frame" x="18" y="356" width="207" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="7El-mi-uLk"/>
@@ -646,19 +649,8 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" id="wBz-L8-8hJ">
-                        <rect key="frame" x="150" y="13" width="120" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                        <buttonCell key="cell" type="push" title="Dismiss" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6rr-sa-pGN">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="dismissPreferences:" target="66D-GA-F88" id="YXl-QH-JL2"/>
-                        </connections>
-                    </button>
                     <button verticalHuggingPriority="750" id="kMb-3R-g4w">
-                        <rect key="frame" x="45" y="72" width="190" height="32"/>
+                        <rect key="frame" x="45" y="51" width="190" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Reset ETA Assumptions..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oXO-Fh-hBu">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -668,19 +660,32 @@
                             <action selector="resetETAEstimates:" target="66D-GA-F88" id="WIg-Jk-r1Q"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whZ-FN-36X">
+                        <rect key="frame" x="18" y="98" width="237" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Include time stamps for utterances" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1sr-4T-ZtB">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <button verticalHuggingPriority="750" id="wBz-L8-8hJ">
+                        <rect key="frame" x="146" y="13" width="121" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Dismiss" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6rr-sa-pGN">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="dismissPreferences:" target="66D-GA-F88" id="YXl-QH-JL2"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="L8l-jO-Rml" firstAttribute="leading" secondItem="605-Dy-7Bi" secondAttribute="leading" constant="20" symbolic="YES" id="Dk7-kn-pJv"/>
                     <constraint firstItem="kWH-mr-UXY" firstAttribute="top" secondItem="605-Dy-7Bi" secondAttribute="top" constant="20" symbolic="YES" id="HX4-iL-uq6"/>
                     <constraint firstItem="kWH-mr-UXY" firstAttribute="leading" secondItem="605-Dy-7Bi" secondAttribute="leading" constant="20" symbolic="YES" id="Jgz-xB-3yF"/>
-                    <constraint firstItem="L8l-jO-Rml" firstAttribute="top" secondItem="kWH-mr-UXY" secondAttribute="bottom" constant="15" id="Une-tO-Pho"/>
-                    <constraint firstItem="kMb-3R-g4w" firstAttribute="top" secondItem="L8l-jO-Rml" secondAttribute="bottom" constant="20" symbolic="YES" id="YCg-mO-AhV"/>
-                    <constraint firstItem="L8l-jO-Rml" firstAttribute="leading" secondItem="605-Dy-7Bi" secondAttribute="leading" constant="20" symbolic="YES" id="gcf-ta-cVr"/>
-                    <constraint firstAttribute="trailing" secondItem="L8l-jO-Rml" secondAttribute="trailing" constant="20" symbolic="YES" id="kUS-yZ-fd0"/>
-                    <constraint firstAttribute="trailing" secondItem="L8l-jO-Rml" secondAttribute="trailing" constant="20" symbolic="YES" id="zhQ-kq-uKf"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="-373" y="-938.5"/>
+            <point key="canvasLocation" x="-373" y="-931"/>
         </window>
     </objects>
 </document>

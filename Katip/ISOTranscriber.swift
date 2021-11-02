@@ -11,7 +11,7 @@ import Accelerate
 import Speech
 
 protocol ISOTranscriberDelegate: AnyObject {
-  func setTranscribedText(_ text: String, withSentenceNo sentenceNo: Int)
+  func setTranscribedText(_ text: String, withSentenceNo sentenceNo: Int, fromTranscription: SFTranscription)
   func shouldStopTranscription() -> Bool
   func transcriptionDone()
   func transcriptionCanceled()
@@ -37,8 +37,11 @@ class ISOTranscriber: NSObject {
       $0.identifier < $1.identifier
     }
     for locale in availableLocales {
-      if let recognizer = SFSpeechRecognizer(locale: locale), recognizer.supportsOnDeviceRecognition {
         self.supportedLocales.append(locale)
+      if let recognizer = SFSpeechRecognizer(locale: locale), recognizer.supportsOnDeviceRecognition {
+        NSLog("\(locale) supported for onDeviceRecognition")
+      } else {
+        NSLog("Locale not supported \(locale)")
       }
     }
   }
@@ -90,7 +93,7 @@ extension ISOTranscriber: SFSpeechRecognitionTaskDelegate {
   }
   
   func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didHypothesizeTranscription transcription: SFTranscription) {
-    self.delegate?.setTranscribedText(transcription.formattedString, withSentenceNo: self.currentSentenceNo)
+    self.delegate?.setTranscribedText(transcription.formattedString, withSentenceNo: self.currentSentenceNo, fromTranscription: transcription)
     if self.delegate?.shouldStopTranscription() ?? false {
       self.recognitionTask.cancel()
       self.recognitionTask = nil
@@ -98,7 +101,7 @@ extension ISOTranscriber: SFSpeechRecognitionTaskDelegate {
   }
 
   func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didFinishRecognition recognitionResult: SFSpeechRecognitionResult) {
-    self.delegate?.setTranscribedText(recognitionResult.bestTranscription.formattedString, withSentenceNo: self.currentSentenceNo)
+    self.delegate?.setTranscribedText(recognitionResult.bestTranscription.formattedString, withSentenceNo: self.currentSentenceNo, fromTranscription: recognitionResult.bestTranscription)
     self.currentSentenceNo += 1
     if self.delegate?.shouldStopTranscription() ?? false {
       self.recognitionTask.cancel()
